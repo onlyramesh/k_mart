@@ -17,10 +17,6 @@ import java.util.List;
 public class ProductController {
     private final ProductService productService;
 
-//    @GetMapping
-//    ResponseEntity<String> getProduct() {
-//        return ResponseEntity.accepted().build();
-//    }
 
     public byte[] convertFiletoByteStream(MultipartFile file) throws Exception {
         String fileName = file.getOriginalFilename();
