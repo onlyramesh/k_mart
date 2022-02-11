@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.time.DateTimeException;
-import java.util.Date;
 
 @Entity
 public class Config {
@@ -14,9 +12,9 @@ public class Config {
     private Long sl_no;
 
     private int minimum_order;
-    private Date delivery_time;
-    private Date delivery_start;
-    private Date delivery_end;
+    private String delivery_time;
+    private String delivery_start;
+    private String delivery_end;
     private String offers;
     private String contact_no1;
     private String contact_no2;
@@ -24,7 +22,7 @@ public class Config {
 
     public Config(){}
 
-    public Config(int minimum_order, Date delivery_time, Date delivery_start, Date delivery_end, String offers, String contact_no1, String contact_no2, String email) {
+    public Config(int minimum_order, String delivery_time, String delivery_start, String delivery_end, String offers, String contact_no1, String contact_no2, String email) {
         this.minimum_order = minimum_order;
         this.delivery_time = delivery_time;
         this.delivery_start = delivery_start;
@@ -43,27 +41,27 @@ public class Config {
         this.minimum_order = minimum_order;
     }
 
-    public Date getDelivery_time() {
+    public String getDelivery_time() {
         return delivery_time;
     }
 
-    public void setDelivery_time(Date delivery_time) {
+    public void setDelivery_time(String delivery_time) {
         this.delivery_time = delivery_time;
     }
 
-    public Date getDelivery_start() {
+    public String getDelivery_start() {
         return delivery_start;
     }
 
-    public void setDelivery_start(Date delivery_start) {
+    public void setDelivery_start(String delivery_start) {
         this.delivery_start = delivery_start;
     }
 
-    public Date getDelivery_end() {
+    public String getDelivery_end() {
         return delivery_end;
     }
 
-    public void setDelivery_end(Date delivery_end) {
+    public void setDelivery_end(String delivery_end) {
         this.delivery_end = delivery_end;
     }
 

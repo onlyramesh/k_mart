@@ -1,7 +1,6 @@
 package com.kirani.kiranibackendcode.controller;
 
 import com.kirani.kiranibackendcode.entity.Config;
-import com.kirani.kiranibackendcode.entity.Coupons;
 import com.kirani.kiranibackendcode.service.ConfigService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
