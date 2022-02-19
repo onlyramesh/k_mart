@@ -15,26 +15,26 @@ public class ProductController {
     private final ProductService productService;
 
 
-    public byte[] convertFiletoByteStream(MultipartFile file) throws Exception {
-        String fileName = file.getOriginalFilename();
-        if (fileName == null || fileName.contains("..")) {
-//            return new ResponseEntity<String>("Sorry! Filename contains invalid path sequence " + fileName, HttpStatus.BAD_REQUEST);
-            throw new Exception("Invalid File");
-        }
-        return file.getBytes();
-    }
+//    public byte[] convertFiletoByteStream(MultipartFile file) throws Exception {
+//        String fileName = file.getOriginalFilename();
+//        if (fileName == null || fileName.contains("..")) {
+////            return new ResponseEntity<String>("Sorry! Filename contains invalid path sequence " + fileName, HttpStatus.BAD_REQUEST);
+//            throw new Exception("Invalid File");
+//        }
+//        return file.getBytes();
+//    }
 
     @PostMapping
     ResponseEntity<Void> savePorduct(@RequestParam String productName, @RequestParam String productQuantity, @RequestParam double productMrp, @RequestParam int productDiscountPer,
-                                     @RequestParam String productSynonyms, @RequestParam String productHash, @RequestParam int productVar, @RequestParam MultipartFile file) {
-        byte[] imageblob;
-        try {
-            imageblob = convertFiletoByteStream(file);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseEntity.badRequest().build();
-        }
-        Product product= new Product(productName,productQuantity,productMrp,productDiscountPer,productSynonyms,productHash,productVar,imageblob);
+                                     @RequestParam String productSynonyms, @RequestParam String productHash, @RequestParam int productVar) {
+//        byte[] imageblob;
+//        try {
+//            imageblob = convertFiletoByteStream(file);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return ResponseEntity.badRequest().build();
+//        }
+        Product product= new Product(productName,productQuantity,productMrp,productDiscountPer,productSynonyms,productHash,productVar);
         productService.saveProduct(product);
         return ResponseEntity.noContent().build();
     }
@@ -48,10 +48,10 @@ public class ProductController {
         return ResponseEntity.ok(productService.getAllProducts());
     }
 
-    @GetMapping(value = "/{productId}/image", produces = MediaType.IMAGE_JPEG_VALUE)
-    public ResponseEntity<byte[]> getProductImage(@PathVariable Long productId){
-       byte[] image= productService.getImagefor(productId);
-       return ResponseEntity.ok(image);
-    }
+//    @GetMapping(value = "/{productId}/image", produces = MediaType.IMAGE_JPEG_VALUE)
+//    public ResponseEntity<byte[]> getProductImage(@PathVariable Long productId){
+//       byte[] image= productService.getImagefor(productId);
+//       return ResponseEntity.ok(image);
+//    }
 
 }

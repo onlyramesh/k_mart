@@ -23,8 +23,8 @@ public class ProductService {
         this.productRepository = repository;
     }
 
-    public byte[] getImagefor(Long productId) {
-        Optional<Product> optionalProduct=this.productRepository.findById(productId);
-        return optionalProduct.map(Product::getImage).orElse(null);
-    }
+//    public byte[] getImagefor(Long productId) {
+//        Optional<Product> optionalProduct=this.productRepository.findById(productId);
+//        return optionalProduct.map(Product::getImage).orElse(null);
+//    }
 }

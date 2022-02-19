@@ -23,13 +23,13 @@ public class Product {
     private String productHash;
     private int productVar;
 
-    @Lob
-    @JsonIgnore
-    private byte[] image;
+//    @Lob
+//    @JsonIgnore
+//    private byte[] image;
 
     public Product(){}
 
-    public Product(String productName, String productQuantity, double productMrp, int productDiscountPer, String productSynonyms, String productHash, int productVar, byte[] image) {
+    public Product(String productName, String productQuantity, double productMrp, int productDiscountPer, String productSynonyms, String productHash, int productVar) {
         this.productName = productName;
         this.productQuantity = productQuantity;
         this.productMrp = productMrp;
@@ -37,7 +37,7 @@ public class Product {
         this.productSynonyms = productSynonyms;
         this.productHash = productHash;
         this.productVar = productVar;
-        this.image = image;
+//        this.image = image;
     }
 
     public Long getProductId() {
@@ -104,11 +104,11 @@ public class Product {
         this.productVar = productVar;
     }
 
-    public byte[] getImage() {
-        return image;
-    }
+//    public byte[] getImage() {
+//        return image;
+//    }
 
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
+//    public void setImage(byte[] image) {
+//        this.image = image;
+//    }
 }

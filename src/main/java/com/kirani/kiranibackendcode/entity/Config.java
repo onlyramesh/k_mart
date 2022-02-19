@@ -12,9 +12,9 @@ public class Config {
     private Long sl_no;
 
     private int minimum_order;
-    private String delivery_time;
-    private String delivery_start;
-    private String delivery_end;
+    private int delivery_time;
+    private int delivery_start;
+    private int delivery_end;
     private String offers;
     private String contact_no1;
     private String contact_no2;
@@ -22,7 +22,7 @@ public class Config {
 
     public Config(){}
 
-    public Config(int minimum_order, String delivery_time, String delivery_start, String delivery_end, String offers, String contact_no1, String contact_no2, String email) {
+    public Config(int minimum_order, int delivery_time, int delivery_start, int delivery_end, String offers, String contact_no1, String contact_no2, String email) {
         this.minimum_order = minimum_order;
         this.delivery_time = delivery_time;
         this.delivery_start = delivery_start;
@@ -41,27 +41,27 @@ public class Config {
         this.minimum_order = minimum_order;
     }
 
-    public String getDelivery_time() {
+    public int getDelivery_time() {
         return delivery_time;
     }
 
-    public void setDelivery_time(String delivery_time) {
+    public void setDelivery_time(int delivery_time) {
         this.delivery_time = delivery_time;
     }
 
-    public String getDelivery_start() {
+    public int getDelivery_start() {
         return delivery_start;
     }
 
-    public void setDelivery_start(String delivery_start) {
+    public void setDelivery_start(int delivery_start) {
         this.delivery_start = delivery_start;
     }
 
-    public String getDelivery_end() {
+    public int getDelivery_end() {
         return delivery_end;
     }
 
-    public void setDelivery_end(String delivery_end) {
+    public void setDelivery_end(int delivery_end) {
         this.delivery_end = delivery_end;
     }
 

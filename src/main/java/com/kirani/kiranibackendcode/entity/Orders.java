@@ -10,7 +10,7 @@ public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int orderID;
+    private Long orderID;
 
     private int orderStatus;
     private String orderDate;
@@ -28,7 +28,7 @@ public class Orders {
 
     public Orders(){}
 
-    public Orders(int orderID, int orderStatus, String orderDate, String orderTime, String orderBillHash, double orderTotal, String orderContactName, String orderContactNumber, String orderAddress, String orderCouponApplied, double orderCouponDiscount, String orderElseProductHash, String reason, String comment) {
+    public Orders(Long orderID, int orderStatus, String orderDate, String orderTime, String orderBillHash, double orderTotal, String orderContactName, String orderContactNumber, String orderAddress, String orderCouponApplied, double orderCouponDiscount, String orderElseProductHash, String reason, String comment) {
         this.orderID = orderID;
         this.orderStatus = orderStatus;
         this.orderDate = orderDate;
@@ -48,11 +48,11 @@ public class Orders {
     public Orders(int orderStatus, String orderDate, String orderTime, String orderBillHash, double orderTotal, String orderContactName, String orderContactNumber, String orderAddress, String orderCouponApplied, double orderCouponDiscount, String orderElseProductHash, String reason, String comment) {
     }
 
-    public int getOrderID() {
+    public Long getOrderID() {
         return orderID;
     }
 
-    public void setOrderID(int orderID) {
+    public void setOrderID(Long orderID) {
         this.orderID = orderID;
     }
 
