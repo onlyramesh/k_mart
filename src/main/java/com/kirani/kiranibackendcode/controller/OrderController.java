@@ -1,5 +1,6 @@
 package com.kirani.kiranibackendcode.controller;
 
+import com.kirani.kiranibackendcode.entity.OrderUpdate;
 import com.kirani.kiranibackendcode.entity.Orders;
 import com.kirani.kiranibackendcode.repository.OrdersRepository;
 import com.kirani.kiranibackendcode.service.OrdersService;
@@ -35,8 +36,21 @@ public class OrderController {
         return ResponseEntity.ok(ordersService.getAllOrders());
     }
 
-//    @PutMapping("/{orderID}")
-//    public ResponseEntity<Orders> updateOrder(@PathVariable(value = "orderId") Long orderID,@RequestBody Orders orders){
-//        ordersService.updateOrders(orders,orderID);
-//    }
+    @GetMapping("{orderId}")
+    public ResponseEntity<Orders> getordersById(@PathVariable Long orderId){
+        return ResponseEntity.ok(ordersService.findById(orderId));
+    }
+
+
+    @PutMapping("/{orderId}/update-status-reason")
+    public ResponseEntity<Void> updateStatusReason(@RequestBody OrderUpdate orderupdate, @PathVariable Long orderId){
+        try{
+            ordersService.updateStatusReason(orderId,orderupdate);
+            return ResponseEntity.ok().build();
+        }
+        catch(Exception e){
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 }

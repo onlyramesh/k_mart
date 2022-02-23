@@ -7,15 +7,16 @@ import lombok.RequiredArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@Table(name="product")
+@Table(name="product")//,uniqueConstraints={@UniqueConstraint(columnNames={"productName"})})
 
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;
 
-
+    @Column(name = "product_Name",unique=true)
     private String productName;
+
     private String productQuantity;
     private double productMrp;
     private int productDiscountPer;
