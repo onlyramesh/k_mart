@@ -15,7 +15,10 @@ public class Orders {
     private int orderStatus;
     private String orderDate;
     private String orderTime;
+
+    @Column(columnDefinition = "TEXT")
     private String orderBillHash;
+
     private double orderTotal;
     private String orderContactName;
     private String orderContactNumber;
@@ -159,6 +162,8 @@ public class Orders {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+
 
     @Override
     public String toString() {

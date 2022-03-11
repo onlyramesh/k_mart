@@ -1,20 +1,7 @@
 package com.kirani.kiranibackendcode.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
+public class ProductUpdate {
 
-import javax.persistence.*;
-
-@Entity
-@Table(name="product")//,uniqueConstraints={@UniqueConstraint(columnNames={"productName"})})
-
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long productId;
-
-    @Column(name = "product_Name",unique=true)
     private String productName;
 
     private String productQuantity;
@@ -24,31 +11,10 @@ public class Product {
     private String productHash;
     private int productVar;
     private int imageName;
-//    @Lob
-//    @JsonIgnore
-//    private byte[] image;
 
-    public Product(){}
+    public ProductUpdate(){
 
-    public Product(String productName, String productQuantity, double productMrp, int productDiscountPer, String productSynonyms, String productHash, int productVar,int imageName) {
-        this.productName = productName;
-        this.productQuantity = productQuantity;
-        this.productMrp = productMrp;
-        this.productDiscountPer = productDiscountPer;
-        this.productSynonyms = productSynonyms;
-        this.productHash = productHash;
-        this.productVar = productVar;
-        this.imageName = imageName;
     }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
     public String getProductName() {
         return productName;
     }
@@ -112,12 +78,4 @@ public class Product {
     public void setImageName(int imageName) {
         this.imageName = imageName;
     }
-
-    //    public byte[] getImage() {
-//        return image;
-//    }
-
-//    public void setImage(byte[] image) {
-//        this.image = image;
-//    }
 }
