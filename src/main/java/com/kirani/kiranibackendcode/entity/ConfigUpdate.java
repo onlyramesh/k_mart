@@ -1,16 +1,8 @@
 package com.kirani.kiranibackendcode.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+public class ConfigUpdate {
 
-@Entity
-public class Config {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long sl_no;
-
     private int minimum_order;
     private int delivery_time;
     private int delivery_start;
@@ -28,26 +20,7 @@ public class Config {
     private int reserve_2;
     private int reserve_3;
 
-    public Config(){}
-
-    public Config(Long sl_no, int minimum_order, int delivery_time, int delivery_start, int delivery_end, String offers, String contact_no1, String contact_no2, String email, String one_time_message, String notification, int show_notification, int delete_coupons, int delete_images, int reserve_1, int reserve_2, int reserve_3) {
-        this.sl_no = sl_no;
-        this.minimum_order = minimum_order;
-        this.delivery_time = delivery_time;
-        this.delivery_start = delivery_start;
-        this.delivery_end = delivery_end;
-        this.offers = offers;
-        this.contact_no1 = contact_no1;
-        this.contact_no2 = contact_no2;
-        this.email = email;
-        this.one_time_message = one_time_message;
-        this.notification = notification;
-        this.show_notification = show_notification;
-        this.delete_coupons = delete_coupons;
-        this.delete_images = delete_images;
-        this.reserve_1 = reserve_1;
-        this.reserve_2 = reserve_2;
-        this.reserve_3 = reserve_3;
+    public ConfigUpdate() {
     }
 
     public Long getSl_no() {

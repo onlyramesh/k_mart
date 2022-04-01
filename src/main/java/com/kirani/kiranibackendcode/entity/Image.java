@@ -13,21 +13,21 @@ public class Image {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long slNo;
 
-    private int imageName;
+    private Long imageName;
     @Lob
     private byte[] image1;
 
     public Image() {
     }
 
-    public Image(Long slNo, int imageName, byte[] image1) {
+    public Image(Long slNo, Long imageName, byte[] image1) {
         this.slNo = slNo;
         this.imageName = imageName;
         this.image1 = image1;
     }
 
 
-    public Image(int imageName, byte[] imageblob) {
+    public Image(Long imageName, byte[] imageblob) {
         this.imageName = imageName;
         this.image1 = imageblob;
     }
@@ -40,11 +40,11 @@ public class Image {
         this.slNo = slNo;
     }
 
-    public int getImageName() {
+    public Long getImageName() {
         return imageName;
     }
 
-    public void setImageName(int imageName) {
+    public void setImageName(Long imageName) {
         this.imageName = imageName;
     }
 

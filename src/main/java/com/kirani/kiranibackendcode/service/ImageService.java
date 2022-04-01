@@ -23,8 +23,8 @@ public class ImageService {
         return (List<Image>) imageRepository.findAll();
     }
 
-    public byte[] getImagefor(Long slNo) {
-        Optional<Image> optionalImage=this.imageRepository.findById(slNo);
+    public byte[] getImagefor(Long imageName) {
+        Optional<Image> optionalImage=this.imageRepository.findByImageName(imageName);
         return optionalImage.map(Image::getImage1).orElse(null);
     }
 }

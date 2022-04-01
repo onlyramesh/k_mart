@@ -1,6 +1,7 @@
 package com.kirani.kiranibackendcode.controller;
 
 import com.kirani.kiranibackendcode.entity.Config;
+import com.kirani.kiranibackendcode.entity.ConfigUpdate;
 import com.kirani.kiranibackendcode.service.ConfigService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,5 +28,16 @@ public class ConfigController {
     public ResponseEntity<List<Config>> getAllCoupons() {
         List<Config> configList=this.configService.getAllConfig();
         return ResponseEntity.ok().body(configList);
+    }
+
+    @PutMapping("/{sl_no}/update-config")
+    public ResponseEntity<Void> updateConfig(@RequestBody ConfigUpdate configUpdate, @PathVariable Long sl_no){
+        try{
+            configService.updateConfig(sl_no,configUpdate);
+            return ResponseEntity.ok().build();
+        }
+        catch (Exception e){
+            return ResponseEntity.notFound().build();
+        }
     }
 }

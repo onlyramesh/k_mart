@@ -26,7 +26,7 @@ public class ImageContrller {
         return file.getBytes();
     }
     @PostMapping
-    ResponseEntity<Void> saveImage(@RequestParam int imageName, @RequestParam MultipartFile file){
+    ResponseEntity<Void> saveImage(@RequestParam Long imageName, @RequestParam MultipartFile file){
         byte[] imageblob;
         try {
             imageblob = convertFiletoByteStream(file);
@@ -40,9 +40,9 @@ public class ImageContrller {
         return ResponseEntity.noContent().build();
     }
 
-    @GetMapping(value = "/{slNo}/image", produces = MediaType.IMAGE_JPEG_VALUE)
-    public ResponseEntity<byte[]> getImage(@PathVariable Long slNo){
-        byte[] image= imageService.getImagefor(slNo);
+    @GetMapping(value = "/{imageName}/image", produces = MediaType.IMAGE_JPEG_VALUE)
+    public ResponseEntity<byte[]> getImage(@PathVariable Long imageName){
+        byte[] image= imageService.getImagefor(imageName);
         return ResponseEntity.ok(image);
     }
 
