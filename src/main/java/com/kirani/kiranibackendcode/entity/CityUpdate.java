@@ -1,16 +1,10 @@
 package com.kirani.kiranibackendcode.entity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
-import net.bytebuddy.dynamic.loading.ClassReloadingStrategy.Strategy;
+public class CityUpdate {
 
-@Entity
-@Table(name="city")
-public class City {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long sl_no;
-    
     private String city_name;
     private int minimum_order;
     private String timing;
@@ -19,18 +13,7 @@ public class City {
     private int reserve1;
     private int reserve2;
 
-    public City(){}
-
-    public City(Long sl_no, String city_name, int minimum_order, String timing, int service_on_off, int deliver_charge, int reserve1, int reserve2) {
-        this.sl_no = sl_no;
-        this.city_name = city_name;
-        this.minimum_order = minimum_order;
-        this.timing = timing;
-        this.service_on_off = service_on_off;
-        this.deliver_charge = deliver_charge;
-        this.reserve1 = reserve1;
-        this.reserve2 = reserve2;
-    }
+    public CityUpdate(){}
 
     public Long getSl_no() {
         return sl_no;
