@@ -21,7 +21,8 @@ public class CityService {
     }
 
     public List<City> getAllCity(){
-        return (List<City>) cityRepository.findAll();
+
+        return (List<City>) this.cityRepository.findAll();
     }
 
     public City findByID(Long sl_no){
@@ -44,6 +45,7 @@ public class CityService {
         city1.setDeliver_charge(cityUpdate.getDeliver_charge());
         city1.setReserve1(cityUpdate.getReserve1());
         city1.setReserve2(cityUpdate.getReserve2());
+        cityRepository.save(city1);
     }
 
 }

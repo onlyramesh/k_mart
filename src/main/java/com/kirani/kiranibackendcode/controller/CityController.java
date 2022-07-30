@@ -30,7 +30,7 @@ public class CityController {
     return ResponseEntity.ok().body(cityList);
     }
 
-    @PutMapping("/{sl_no}/city-update")
+    @PutMapping("/{sl_no}/update-city")
     public ResponseEntity<Void> updateCity(@RequestBody CityUpdate cityUpdate,@PathVariable Long sl_no){
         try{
             cityService.updateCity(sl_no,cityUpdate);
